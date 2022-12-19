@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * configuration.php.sample
+ * 
+ * Sample configuration. 
+ * Important! This file has to be copied/renamed to "configuration.php" after 
+ * setting the configuration values.
+ * 
+ * @author Michael Pohl (www.simatex.de)
+ */
+
+
+/*******************************************************************************
+ * Global Webservice configuration
+ */
+$_CONFIG = array  
+(
+	/********************************************************************** 
+	 * URL to the automatically generated documentation as HTML page.
+	 * e.g. If the value "HelloDoc" is configured, it can be accessed in the
+	 * application 'TEST' via webservice URL "https://.../TEST/HelloDoc".
+	 */
+	"documentation.url" => "wsdoc",
+	
+	/**********************************************************************
+	 * URL to the automatically generated documentation as processable JSON
+	 * string.
+	 * e.g. If the value "HelloJsonDoc" is configured, it can be accessed in the
+	 * application 'TEST' via webservice URL "https://.../TEST/HelloJsonDoc".
+	 */
+	"documentation.jurl" => "wsjdoc", 
+
+	/**********************************************************************
+	 * Default response status code of a response object, if no one was set
+	 */
+	"response.defaultstatuscode" => 200,
+
+	/**********************************************************************
+	 * Default response content type of a response object, if no one was set
+	 */
+	"response.defaultcontenttype" => "text/plain",
+	
+	/**********************************************************************
+	 * Activates/deactivates a screen output when executed. If the parameter
+	 * is 'false' (recommended), absolutely no output can be written to the
+	 * display/browser.
+	 * For a proper functionallity of the webservice it is neccessarey to set
+	 * this parameter to 'false', because when the webservice responce is sent,
+	 * header informations have to be included. That means, any output prior
+	 * to the sending of header information is strictly forbidden.
+	 * 'true' should be used only for testing purposes.
+	 */
+	"webservice.allowoutput" => false,
+
+	/**********************************************************************
+	 * Changes the RESTWebservice's working mode. If the parameter is set to
+	 * 'true' (default) several 'applications' can be run under one webservice.
+	 * If set to 'false', just one single application can be used.
+	 */
+	"webservice.useapplications" => true,
+	
+	/**********************************************************************
+	 * List of origin domains for cross origin resource sharing (CORS) to allow
+	 * Javascript requests to a different domain as the one, the script is from.
+	 * Mutliple domains are set with comma as delimiter.
+	 * (e.g. "www.domain.com, www.anotherdomain.com")
+	 */
+	"webservice.corsdomains" => ""
+	
+);
