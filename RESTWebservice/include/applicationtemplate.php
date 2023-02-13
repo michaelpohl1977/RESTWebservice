@@ -130,14 +130,6 @@ class ApplicationTemplate
 	 * Sets the allowed content types for the current application/function
 	 * collection. Already existing ones are overwritten, not added.
 	 * 
-	 * @param
-	 */
-
-
-	/************************************************************************
-	 * Setzt die für die komplette Applikation/Funktionssammlung erlaubten
-	 * Content-Typen (vorhandene werden überschrieben)
-	 * 
 	 * @param String [...] Any count of string parameters with allowed content
 	 *                     types to set.
 	 *                     e.g. ...("application/text", "application/json")
