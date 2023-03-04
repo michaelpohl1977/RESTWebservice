@@ -213,7 +213,7 @@ class RestResponse
 		{
 			if ($Type != "")
 			{
-				$this->_ContentType = $Type;
+				$this->_ContentType = strtolower($Type);
 				return;
 			}
 		}
