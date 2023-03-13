@@ -1,0 +1,13 @@
+###############################################################################
+# Ersteller: Michael Pohl (www.simatex.de)
+###############################################################################
+
+# Umleitung schickt jeden Aufruf durch den Dispatcher,
+# damit die einzelnen Applikationen/Services dementsprechend
+# aufgerufen werden.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ dispatch.php?$1 [QSA,L]
+RewriteRule ^ dispatch.php [QSA,L]
