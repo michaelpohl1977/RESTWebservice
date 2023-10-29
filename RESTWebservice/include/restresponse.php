@@ -451,16 +451,25 @@ class RestResponse
 	 */
 	public function Send ()
 	{
+		global $_CONFIG;
+
 		$strStatusHeader = FormatString("HTTP/1.1 {0} {1}",
 			$this->getStatusCode(),
 			$this->getStatusMessage());
 
-		// Setzen des Headers
+		// Setting of Headers
 		header($strStatusHeader);
 		// 'content-type' and 'content-length' are always set here, even if
 		// the user changed/removed this values previously.
 		$this->setHeaderItem('Content-type', $this->getContentType());
 		$this->setHeaderItem('Content-length', $this->getContentLength());
+
+		// Automatically add the CORS-header, even if the user removed or
+		// changed it previously, if a value is configured in the configuration
+		// file
+		if ($_CONFIG["webservice.corsdomains"] != "") {
+			$this->setHeaderItem('Access-Control-Allow-Origin', $_CONFIG["webservice.corsdomains"]);
+		}
 
 		$HeaderKeys = array_keys($this->_Header);
 

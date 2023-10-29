@@ -1,4 +1,4 @@
-# RESTWebservice 1.8.0
+# RESTWebservice 1.8.1
 
 RESTWebservice is a very lean implementation of a PHP webservice without installation.
 Just copy the files of this library into any directory, to enable a powerful webservice endpoint.
@@ -34,6 +34,9 @@ Visit https://www.simatex.de/documentation/restwebservice for detailed informati
 	}
 
 ## History
+
+**Version 1.8.1 - 2023-10-29**
+* Correction in handling of CORS-domain handling
 
 **Version 1.8.0 - 2022-12-19**
 * Correction of possible errors when creating the application documentation
